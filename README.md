@@ -1,6 +1,6 @@
 # bot-discord
-##Bot Gateway
+## Bot Gateway
 
-##bot
+## bot
 
-##web
+## web
