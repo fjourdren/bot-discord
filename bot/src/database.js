@@ -1,24 +1,28 @@
 const { Client } = require('pg');
 const { infoDB } = require('../config.json');
 
-async function queryAsync(query, values) {
+module.exports = {
 
-	const clientDB = new Client(infoDB);
+	queryAsync : async function(query, values) {
 
-	let res;
+		const clientDB = new Client(infoDB);
 
-	try {
-		await clientDB.connect();
+		let res;
 
-		const result = await clientDB.query(query, values);
-		res = result.rows;
-	}
-	finally {
-		clientDB.end();
-	}
-	return await res;
-}
+		try {
+			await clientDB.connect();
 
+			const result = await clientDB.query(query, values);
+			res = result.rows;
+		}
+		finally {
+			clientDB.end();
+		}
+		return await res;
+	},
+};
+/*
 (async () => {
 	console.log(await queryAsync('SELECT * FROM utilisateur WHERE id = $1', ['296319337424355330']));
 })();
+*/
