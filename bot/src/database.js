@@ -20,6 +20,17 @@ module.exports = {
 		}
 		return await res;
 	},
+
+	queryPromise : function(query, values) {
+		const clientDB = new Client(infoDB);
+		clientDB.query(query, values)
+			.then(res =>{
+				console.log(res.rows[0]);
+				clientDB.end();
+				return res.rows[0];
+			})
+			.catch(e => console.error(e.stack));
+	},
 };
 /*
 (async () => {
