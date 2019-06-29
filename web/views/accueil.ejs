@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title><%= config.TITLE %></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+        <% include components/menu %>
+
+        <div class="container">
+
+            <% if(locals.auth) { %>
+                <div class="row">
+
+                    <% include components/menuLeft %>
+            
+                    <div class="col-md-9">
+                        <form>
+                            <div class="form-group">
+                                <label for="selectServer">Sélection serveur:</label>
+                                <select class="form-control" id="selectServer">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            <% } %>
+
+            <br/><br/><br/><br/>
+
+            <div class="row">
+                    <div class="col-centered col-md-8">
+                            <form>
+                                <div class="form-group">
+                                    <label for="selectServer">Sélection serveur:</label>
+                                    <select class="form-control" id="selectServer">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+            </div>
+
+            <div class="row">
+                <div class="col-centered col-md-8">
+                        <table id="mytable" class="table table-bordred table-striped">
+                   
+                            <thead>
+                                <th><input type="checkbox" id="checkall" /></th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Address</th>
+                                <th>Email</th>
+                                <th>Contact</th>
+                                <th>Edit</th>
+                                
+                                <th>Delete</th>
+                            </thead>
+
+                            <tbody>
+                
+                            <tr>
+                            <td><input type="checkbox" class="checkthis" /></td>
+                            <td>Mohsin</td>
+                            <td>Irshad</td>
+                            <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
+                            <td>isometric.mohsin@gmail.com</td>
+                            <td>+923335586757</td>
+                            <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                            <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                            </tr>
+                            
+                        <tr>
+                            <td><input type="checkbox" class="checkthis" /></td>
+                            <td>Mohsin</td>
+                            <td>Irshad</td>
+                            <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
+                            <td>isometric.mohsin@gmail.com</td>
+                            <td>+923335586757</td>
+                            <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                            <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                            </tr>
+                            
+                            
+                        <tr>
+                            <td><input type="checkbox" class="checkthis" /></td>
+                            <td>Mohsin</td>
+                            <td>Irshad</td>
+                            <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
+                            <td>isometric.mohsin@gmail.com</td>
+                            <td>+923335586757</td>
+                            <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                            <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                            </tr>
+                            
+                            
+                            
+                        <tr>
+                            <td><input type="checkbox" class="checkthis" /></td>
+                            <td>Mohsin</td>
+                            <td>Irshad</td>
+                            <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
+                            <td>isometric.mohsin@gmail.com</td>
+                            <td>+923335586757</td>
+                            <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                            <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                            </tr>
+                            
+                            
+                        <tr>
+                            <td><input type="checkbox" class="checkthis" /></td>
+                            <td>Mohsin</td>
+                            <td>Irshad</td>
+                            <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
+                            <td>isometric.mohsin@gmail.com</td>
+                            <td>+923335586757</td>
+                            <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                            <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                            </tr>
+                                                        
+                        </tbody>      
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-centered col-md-5">
+                    <form action="/action_page.php">
+                        <div class="form-group">
+                            <label for="email">Email address:</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" class="form-control" id="pwd">
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox"> Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="row">
+                <h3>Approved websites <span class="label label-success">Secure</span></h3>
+            </div>
+            
+            <div class="row">
+            
+                <div class="col-md-4">
+                    <h4><a href="">Heading</a></h4>
+                    <div class="text-center">
+                        <img src='data:image/svg+xml;charset=UTF-8,%3Csvg width%3D"200" height%3D"200" xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" viewBox%3D"0 0 200 200" preserveAspectRatio%3D"none"%3E%3Cdefs%3E%3Cstyle type%3D"text%2Fcss"%3E%23holder_15f253cfe7c text %7B fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C monospace%3Bfont-size%3A10pt %7D %3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg id%3D"holder_15f253cfe7c"%3E%3Crect width%3D"200" height%3D"200" fill%3D"%23777"%3E%3C%2Frect%3E%3Cg%3E%3Ctext x%3D"74" y%3D"104.8"%3E200x200%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E' class="rounded" alt="..."/>
+                    </div>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                </div>
+                <div class="col-md-4">
+                    <h4><a href="">Heading</a></h4>
+                    <div class="text-center">
+                        <img src='data:image/svg+xml;charset=UTF-8,%3Csvg width%3D"200" height%3D"200" xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" viewBox%3D"0 0 200 200" preserveAspectRatio%3D"none"%3E%3Cdefs%3E%3Cstyle type%3D"text%2Fcss"%3E%23holder_15f253cfe7c text %7B fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C monospace%3Bfont-size%3A10pt %7D %3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg id%3D"holder_15f253cfe7c"%3E%3Crect width%3D"200" height%3D"200" fill%3D"%23777"%3E%3C%2Frect%3E%3Cg%3E%3Ctext x%3D"74" y%3D"104.8"%3E200x200%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E' class="rounded" alt="..."/>
+                    </div>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                </div>
+                <div class="col-md-4">
+                    <h4><a href="">Heading</a></h4>
+                    <div class="text-center">
+                        <img src='data:image/svg+xml;charset=UTF-8,%3Csvg width%3D"200" height%3D"200" xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" viewBox%3D"0 0 200 200" preserveAspectRatio%3D"none"%3E%3Cdefs%3E%3Cstyle type%3D"text%2Fcss"%3E%23holder_15f253cfe7c text %7B fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C monospace%3Bfont-size%3A10pt %7D %3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg id%3D"holder_15f253cfe7c"%3E%3Crect width%3D"200" height%3D"200" fill%3D"%23777"%3E%3C%2Frect%3E%3Cg%3E%3Ctext x%3D"74" y%3D"104.8"%3E200x200%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E' class="rounded" alt="..."/>
+                        <hr/>
+                    </div>
+                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                </div>
+            </div>
+
+            
+            <hr/>
+            
+            
+            <div class="row">
+                <h3>Unapproved websites <span class="label label-danger">Unsecure</span></h3>
+            </div>
+            
+            <div class="row">
+            
+                <div class="col-md-4">
+                    <h4><a href="">Heading</a></h4>
+                    <div class="text-center">
+                        <img src='data:image/svg+xml;charset=UTF-8,%3Csvg width%3D"200" height%3D"200" xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" viewBox%3D"0 0 200 200" preserveAspectRatio%3D"none"%3E%3Cdefs%3E%3Cstyle type%3D"text%2Fcss"%3E%23holder_15f253cfe7c text %7B fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C monospace%3Bfont-size%3A10pt %7D %3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg id%3D"holder_15f253cfe7c"%3E%3Crect width%3D"200" height%3D"200" fill%3D"%23777"%3E%3C%2Frect%3E%3Cg%3E%3Ctext x%3D"74" y%3D"104.8"%3E200x200%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E' class="rounded" alt="..."/>
+                    </div>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                </div>
+                <div class="col-md-4">
+                    <h4><a href="">Heading</a></h4>
+                    <div class="text-center">
+                        <img src='data:image/svg+xml;charset=UTF-8,%3Csvg width%3D"200" height%3D"200" xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" viewBox%3D"0 0 200 200" preserveAspectRatio%3D"none"%3E%3Cdefs%3E%3Cstyle type%3D"text%2Fcss"%3E%23holder_15f253cfe7c text %7B fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C monospace%3Bfont-size%3A10pt %7D %3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg id%3D"holder_15f253cfe7c"%3E%3Crect width%3D"200" height%3D"200" fill%3D"%23777"%3E%3C%2Frect%3E%3Cg%3E%3Ctext x%3D"74" y%3D"104.8"%3E200x200%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E' class="rounded" alt="..."/>
+                    </div>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                </div>
+                <div class="col-md-4">
+                    <h4><a href="">Heading</a></h4>
+                    <div class="text-center">
+                        <img src='data:image/svg+xml;charset=UTF-8,%3Csvg width%3D"200" height%3D"200" xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" viewBox%3D"0 0 200 200" preserveAspectRatio%3D"none"%3E%3Cdefs%3E%3Cstyle type%3D"text%2Fcss"%3E%23holder_15f253cfe7c text %7B fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C monospace%3Bfont-size%3A10pt %7D %3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg id%3D"holder_15f253cfe7c"%3E%3Crect width%3D"200" height%3D"200" fill%3D"%23777"%3E%3C%2Frect%3E%3Cg%3E%3Ctext x%3D"74" y%3D"104.8"%3E200x200%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E' class="rounded" alt="..."/>
+                    </div>
+                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                </div>
+            </div>
+            
+            
+            <hr/>
+
+            <footer class="footer-bs">
+                <div class="row">
+                    <div class="col-md-3 footer-brand animated fadeInLeft">
+                        <h2>Logo</h2>
+                        <p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex mi ut sem.</p>
+                        <p>© 2014 BS3 UI Kit, All rights reserved</p>
+                    </div>
+                    <div class="col-md-4 footer-nav animated fadeInUp">
+                        <h4>Menu</h4>
+                        <div class="col-md-6">
+                            <ul class="pages">
+                                <li><a href="#">Travel</a></li>
+                                <li><a href="#">Nature</a></li>
+                                <li><a href="#">Explores</a></li>
+                                <li><a href="#">Science</a></li>
+                                <li><a href="#">Advice</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Contacts</a></li>
+                                <li><a href="#">Terms & Condition</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2 footer-social animated fadeInDown">
+                        <h4>Follow Us</h4>
+                        <ul>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">RSS</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 footer-ns animated fadeInRight">
+                        <h4>Newsletter</h4>
+                        <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
+                        <p>
+                            <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+                            </span>
+                            </div><!-- /input-group -->
+                        </p>
+                    </div>
+                </div>
+            </footer>
+        
+        </div>
+    
+    </body>
+</html>

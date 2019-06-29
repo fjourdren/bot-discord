@@ -1,0 +1,18 @@
+{
+  "name": "Discord-projet-interface-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "btoa": "^1.2.1",
+    "ejs": "^2.6.1",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  }
+}

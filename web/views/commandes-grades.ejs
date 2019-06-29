@@ -1,0 +1,61 @@
+<% include components/head %>
+
+    <% include components/menu %>
+
+    <div class="container">
+
+        <div class="row">
+
+            <% include components/menuLeft %>
+
+            <div class="col-md-9">
+                <h4>Ajouter une liaison commande / grade :</h4>
+                <form action="/addcommandes-grades" method="POST">
+                    <div class="form-group">
+                        <label for="commande">Commande :</label>
+                        <select class="form-control mdb-select md-form" name="commande">
+                            <% for (var i = 0; i < commands.length; i++) { %>
+                                <option value="<%= commands[i].id %>">[<%= commands[i].sanction_name %>] <%= commands[i].pattern_command %> (<%= commands[i].id %>)</option>
+                            <% } %>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="grade">Grade :</label>
+                        <select class="form-control mdb-select md-form" name="grade">
+                            <% for (var i = 0; i < ranks.length; i++) { %>
+                                <option value="<%= ranks[i].id %>"><%= ranks[i].name %></option>
+                            <% } %>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-success center-block">Ajouter</button>
+                </form>
+            </div>
+
+            <div class="col-md-9 col-right">
+                <table id="mytable" class="table table-bordred table-striped">
+            
+                    <thead>
+                        <th>Commande</th>
+                        <th>Grade</th>
+                        <th>Supprimer</th>
+                    </thead>
+
+                    <tbody>
+                        <% for (var i = 0; i < commandsRanks.length; i++) { %>
+                            <tr>
+                                <td>[<%= commandsRanks[i].sanction_name %>] <%= commandsRanks[i].pattern_command %> (<%= commandsRanks[i].id %>)</td>
+                                <td><%= commandsRanks[i].name %></td>
+                                <td><p data-placement="top" data-toggle="tooltip" title="Delete"><a class="btn btn-danger btn-xs" href="/actionDelcommandes-grades?command_id=<%= commandsRanks[i].command_id %>&rank_id=<%= commandsRanks[i].rank_id %>"><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                            </tr>
+                        <% } %>
+                       
+                    </tbody>      
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+<% include components/footer %>

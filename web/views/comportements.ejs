@@ -1,0 +1,42 @@
+<% include components/head %>
+
+    <% include components/menu %>
+
+    <div class="container">
+
+        <div class="row">
+
+            <% include components/menuLeft %>
+
+            <div class="col-md-9">
+                <form action="/actionSaveComportements" method="POST">
+                    <table id="mytable" class="table table-bordred table-striped">
+                
+                        <thead>
+                            <th>Comportement</th>
+                            <th>État</th>
+                        </thead>
+
+                        <tbody>
+                            <% for (var i = 0; i < behaviors.length; i++){ %>
+                                <tr>
+                                    <td><%= behaviors[i].behavior_name %></td>
+                                    <% if(behaviors[i].enabled == true) { %>
+                                        <td><input name="<%= behaviors[i].behavior_name %>" type="checkbox" data-toggle="toggle" checked/></td>
+                                    <% } else { %>
+                                        <td><input name="<%= behaviors[i].behavior_name %>" type="checkbox" data-toggle="toggle"/></td>
+                                    <% } %>
+                                </tr>
+                            <% } %>
+                        
+                        </tbody>      
+                    </table>
+
+                    <button type="submit" class="btn btn-success center-block">Sauvegarder</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+<% include components/footer %>

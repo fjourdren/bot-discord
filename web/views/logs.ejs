@@ -1,0 +1,55 @@
+<% include components/head %>
+
+    <% include components/menu %>
+
+    <div class="container">
+
+        <div class="row">
+
+            <% include components/menuLeft %>
+
+            <div class="col-md-9">
+                <h4>Configuration des logs :</h4>
+                <form action="/actionSaveLogs" method="POST">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="channelLogIdMessages">Channel log Messages :</label>
+                            </div>
+                            <div class="col-md-8">
+                                <select class="form-control mdb-select md-form" name="channelLogIdMessages">
+                                    <% for (var i = 0; i < channels.length; i++) { 
+                                        var selected = (channels[i].id == serverInfos[0].idlogmessage) ? "selected" : "";
+                                        %>
+                                        <option value="<%= channels[i].id %>" <%= selected %>><%= channels[i].name %></option>
+                                    <% } %>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="channelLogIdCommandes">Channel log Commandes :</label>
+                            </div>
+                            <div class="col-md-8">
+                                <select class="form-control mdb-select md-form" name="channelLogIdCommandes">
+                                    <% for (var i = 0; i < channels.length; i++) { 
+                                        var selected = (channels[i].id == serverInfos[0].idlogcommand) ? "selected" : "";
+                                        %>
+                                        <option value="<%= channels[i].id %>" <%= selected %>><%= channels[i].name %></option>
+                                    <% } %>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-success center-block">Sauvegarder</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+<% include components/footer %>
