@@ -1,0 +1,49 @@
+<% include components/head %>
+
+    <% include components/menu %>
+
+    <div class="container">
+
+        <div class="row">
+
+            <% include components/menuLeft %>
+
+            <div class="col-md-9">
+                <h4>Ajouter un grade :</h4>
+                <form action="/actionAddRank" method="POST">
+                    <div class="form-group">
+                        <label for="nomRank">Nom :</label>
+                        <input type="text" class="form-control" name="nomRank">
+                    </div>
+
+                    <button type="submit" class="btn btn-success center-block">Ajouter</button>
+                </form>
+            </div>
+
+
+            <div class="col-md-9 col-right">
+                
+                    <table id="mytable" class="table table-bordred table-striped">
+            
+                        <thead>
+                            <th>Id</th>
+                            <th>Nom</th>
+                            <th>Supprimer</th>
+                        </thead>
+    
+                        <tbody> 
+                            <% for (var i = 0; i < ranks.length; i++){ %>
+                                <tr>
+                                    <td><%= ranks[i].id %></td>
+                                    <td><%= ranks[i].name %></td>
+                                    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><a class="btn btn-danger btn-xs" href="/actionDelRank?id=<%= ranks[i].id %>"><span class="glyphicon glyphicon-trash"></span></a></p></td>
+                                </tr>
+                            <% } %>
+                            
+                        </tbody>      
+                    </table>
+            </div>
+        </div>
+    </div>
+
+<% include components/footer %>

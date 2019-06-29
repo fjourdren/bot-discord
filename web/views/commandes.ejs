@@ -1,0 +1,70 @@
+<% include components/head %>
+
+    <% include components/menu %>
+
+    <div class="container">
+
+        <div class="row">
+
+            <% include components/menuLeft %>
+
+            <div class="col-md-9">
+                <h4>Ajouter une commande :</h4>
+                <p><strong>Exemple avec la commande suivant :<br/>
+                Pattern : test(user, duration, reason, area)<br/>
+                Sanction : MUET<br/><br/>
+                
+                Pattern : test(user, reason, area)<br/>
+                Sanction : SOURD</strong><br/>
+
+                La commande test va mute un utilisateur et le rendre sourd<br/>
+                Si duration n'est pas défini --> définitif ou jusqu'à sanction levée (!free)<br/>
+                Si reason n'est pas défini --> pas d'informations stockées<br/>
+                Si area n'est pas défini --> sanction sur l'ensemble du serveur</p>
+                <form action="/actionAddCommand" method="post">
+                    <div class="form-group">
+                        <label for="paterne">Patron de conception :</label>
+                        <input type="text" class="form-control" name="pattern_command">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sanction">Sanction :</label>
+                        <select class="form-control mdb-select md-form" name="sanction_name">
+                            <% for (var i = 0; i < sanctions.length; i++){ %>
+                                <option value="<%= sanctions[i].name %>"><%= sanctions[i].name %></option>
+                            <% } %>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-success center-block">Ajouter</button>
+                </form>
+            </div>
+
+            <div class="col-md-9 col-right">
+                <table id="mytable" class="table table-bordred table-striped">
+            
+                    <thead>
+                        <th>Id</th>
+                        <th>Patron de conception</th>
+                        <th>Sanction</th>
+                        <th>Supprimer</th>
+                    </thead>
+
+                    <tbody>
+                        <% for (var i = 0; i < commands.length; i++){ %>
+                            <tr>
+                                <td><%= commands[i].id %></td>
+                                <td><%= commands[i].pattern_command %></td>
+                                <td><%= commands[i].sanction_name %></td>
+                                <td><p data-placement="top" data-toggle="tooltip" title="Delete"><a class="btn btn-danger btn-xs" href="/actionDelCommand?id=<%= commands[i].id %>"><span class="glyphicon glyphicon-trash"></span></a></p></td>
+                            </tr>
+                        <% } %>
+                        
+                    </tbody>      
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+<% include components/footer %>

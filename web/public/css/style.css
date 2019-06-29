@@ -1,0 +1,56 @@
+.inviteBotLink {
+    margin-top: 1px;
+    background-color: #70EA9F;
+}
+
+.thanksToLogin {
+    font-size: 150%;
+}
+
+.inviteBotLink a {
+    color: white !important;
+    font-weight: bold;
+}
+
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+.col-right {
+    float: right;
+    margin: 0 auto;
+}
+
+.nav li p {
+    color: #9d9d9d;
+    position: relative;
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 20px;
+    margin: 0;
+}
+
+.menuGauche a {
+    color: rgb(76, 196, 92);
+}
+
+.menuGauche .active {
+    margin-top: 1px;
+    background-color: #70EA9F;
+    color: white;
+}
+
+@media only screen and (max-width: 750px) {
+    .serverSelectionForm {
+        float: inherit !important;
+    }
+
+    .nav li p {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin: 0px 15px;
+    }
+}
