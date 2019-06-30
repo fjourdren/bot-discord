@@ -37,7 +37,7 @@ bot.on('messageDelete', messageDelete => {
 });
 
 bot.on('messageUpdate', (oldMessage, newMessage) => {
-	// si message supprimé, on vérifie l'existence d'un channel log message, s'il existe, on vérifie qu'il s'agit bien d'un channel textuel du serveur.
+	// si message édité, on vérifie l'existence d'un channel log message, s'il existe, on vérifie qu'il s'agit bien d'un channel textuel du serveur.
 	const client = new Client(infoDB);
 	client.connect();
 
@@ -46,10 +46,7 @@ bot.on('messageUpdate', (oldMessage, newMessage) => {
 			console.log(err.stack);
 		}
 		else {
-			const idChannel = res.rows[0].idlogcommand;
-			if(idChannel) {
-				bot.channels.get(idChannel).send(`Le message : \n    "${oldMessage.content}"\nde ${oldMessage.author.tag} a été modifié en\n    "${newMessage.content}".`);
-			}
+			bot.channels.get(res.rows[0].idlogmessage).send(`Le message : \n    "${oldMessage.content}"\nde ${oldMessage.author.tag} a été modifié en\n    "${newMessage.content}".`);
 		}
 		client.end();
 	});
@@ -103,7 +100,7 @@ bot.on('guildDelete', guild => {
 	// event triggered -> Le bot quitte un serveur
 	// Il faut le supprimer de la bdd (on garde les sanctions, possibilité de reset la configuration sur le panel admin)
 
-	console.log(`Le bot a quitté la guilde : ${guild.name} (id: ${guild.id}).\nSuppresion des fichiers dans la base`);
+	console.log(`Le bot a quitté la guilde : (id: ${guild.id}).\nSuppresion des fichiers dans la base`);
 	dbClient.queryAsync('DELETE FROM serveur WHERE id = $1;', [guild.id]);
 });
 
